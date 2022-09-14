@@ -1,0 +1,43 @@
+<html>  
+<body>  
+<h1>Student Details</h1>  
+<!--
+	<tr th:each="student: ${students}">
+		<td th:text="${student.id}"></td><br>
+		<td th:text="${student.name}"></td><br>
+		<td th:text="${student.dateOfBirth}"></td><br>
+		<td th:text="${student.createdDate}"></td><br>
+		<td th:text="${student.modifiedDate}"></td><br>
+		<td text="classes:"></td><br>
+		
+		<tr th:each="class: ${student.classes}">
+			<td th:text="  ${class.id}"></td>
+			<td th:text="  ${class.name}"></td>
+		</tr>
+		<tr th:each="country: ${student.countries}">
+			<td th:text="  ${country.id}"></td>
+			<td th:text="  ${country.name}"></td>
+		</tr>
+	</tr>
+-->
+	<h2>
+	Classes
+	</h2>
+	<tr th:each="instance : ${classMap}">
+	    <td th:text="${instance.key.className}">keyvalue</td><br>
+	    <td th:text="${instance.value}">num</td><br><br>
+	</tr>
+	<h2>
+	Countries
+	</h2>
+	<tr th:each="instance : ${countriesMap}">
+	    <td th:text="${instance.key.name}">keyvalue</td><br>
+	    <td th:text="${instance.value}">num</td><br><br>
+	</tr>
+	
+	<h2>
+	Age Average
+	</h2>
+	<td th:text="${avgAge}"></td>
+</body>  
+</html>  
