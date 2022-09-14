@@ -1,6 +1,5 @@
 package rihal.webchallenge;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +18,21 @@ public class DataLoader implements CommandLineRunner{
 
 	@Autowired
 	StudentRepository studentRepo;
-	
+
 	@Autowired
 	ClassRepository classRepo;
-	
+
 	@Autowired
 	CountryRepository countryRepo;
-	
-	
+
+
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("executed1");
 		if(studentRepo.count() != 0)
 			return;
-		
-		
+
+
 		// create classes
 		Class class1 = new Class("Chem");
 		Class class2 = new Class("Phy");
@@ -43,16 +42,16 @@ public class DataLoader implements CommandLineRunner{
 		Class class6 = new Class("Islamic");
 		Class class7 = new Class("PE");
 		Class class8 = new Class("Fre");
-		
-		classRepo.save(class1); 
+
+		classRepo.save(class1);
 		classRepo.save(class2);
 		classRepo.save(class3);
-		classRepo.save(class4); 
+		classRepo.save(class4);
 		classRepo.save(class5);
 		classRepo.save(class6);
 		classRepo.save(class7);
 		classRepo.save(class8);
-		
+
 		// create countries
 		Country country1 = new Country("Oman");
 		Country country2 = new Country("Qatar");
@@ -60,9 +59,9 @@ public class DataLoader implements CommandLineRunner{
 		Country country4 = new Country("UK");
 		countryRepo.save(country1);
 		countryRepo.save(country2);
-		countryRepo.save(country3); 
+		countryRepo.save(country3);
 		countryRepo.save(country4);
-		
+
 		//students
 		Student student1 = new Student("salim",new Date(2000-1900,4,11));
 		student1.addClass(class1);
@@ -78,10 +77,10 @@ public class DataLoader implements CommandLineRunner{
 		student2.addCountry(country3);
 		student2.addCountry(country2);
 		studentRepo.save(student2);
-		
+
 		Iterable<Student> all = studentRepo.findAll();
 		System.out.println(all.toString());
-		
+
 	}
 
 }

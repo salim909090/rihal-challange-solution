@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Student {
@@ -37,8 +36,8 @@ public class Student {
 		this.dateOfBirth = dateOfBirth;
 		this.createdDate = new Date();
 		this.modifiedDate = new Date();
-		this.classes = new HashSet<Class>();
-		this.countries = new HashSet<Country>();
+		this.classes = new HashSet<>();
+		this.countries = new HashSet<>();
 
 	}
 
@@ -73,7 +72,7 @@ public class Student {
 	public Set<Country> getCountries(){
 		return this.countries;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
@@ -98,6 +97,7 @@ public class Student {
 	public Date getModifiedDate() {
 		return this.modifiedDate;
 	}
+	@Override
 	public String toString() {
 		return this.id+"";
 	}

@@ -12,11 +12,11 @@ public class Class {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
+
 	private String className;
-	
+
 	private Date createdDate;
-	
+
 	private Date modifiedDate;
 	private Class() {}
 	public Class(String class_name) {
@@ -29,24 +29,25 @@ public class Class {
 	public void setClassName(String newClassName) {
 		this.className = newClassName;
 		this.modifiedDate = new Date();
-	}	
-	
+	}
+
 	public String getClassName() {
 		return this.className;
 	}
-	
+
 	public Long getId() {
 		return this.id;
 	}
-	
+
 	public Date getCreatedDate() {
 		return this.createdDate;
 	}
-	
+
 	public Date getModifiedDate() {
 		return this.modifiedDate;
 	}
-	
+
+	@Override
 	public String toString() {
 		return this.id + " " + this.className;
 	}

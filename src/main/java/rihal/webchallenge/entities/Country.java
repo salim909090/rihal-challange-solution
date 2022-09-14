@@ -30,20 +30,20 @@ public class Country {
 	public void setName(String newName) {
 		this.name = newName;
 		this.modifiedDate = new Date();
-	}	
-	
+	}
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public Long getId() {
 		return this.id;
 	}
-	
+
 	public Date getCreatedDate() {
 		return this.createdDate;
 	}
-	
+
 	public Date getModifiedDate() {
 		return this.modifiedDate;
 	}
